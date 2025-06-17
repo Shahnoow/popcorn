@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import StarRating from "./StarRating";
-// import { keyboard } from "@testing-library/user-event/dist/keyboard";
+import Popcorn from "./assest/popcorn.gif";
 
 const tempMovieData = [
   {
@@ -174,7 +174,7 @@ function Search({ query, setQuery }) {
 function Logo() {
   return (
     <div className="logo">
-      <span role="img">🍿</span>
+      <img src={Popcorn} alt="Popcorn" width={40} height={40} />
       <h1>Popcorn Club</h1>
     </div>
   );
