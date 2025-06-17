@@ -130,7 +130,6 @@ function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
   />
 </svg>
 
-
 EMPTY STAR
 
 <svg
