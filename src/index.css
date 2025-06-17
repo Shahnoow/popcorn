@@ -377,8 +377,10 @@ body {
   }
 
   .summary div {
-    gap: 0rem;
-    display: flexbox;
+    gap: 1rem;
+    padding: 0.5rem 0rem;
+    justify-content: center;
+    align-items: center;
   }
 
   .main {
