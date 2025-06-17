@@ -198,7 +198,7 @@ function Logo() {
   return (
     <div className="logo">
       <span role="img">🍿</span>
-      <h1>usePopcorn</h1>
+      <h1>Popcorn Club</h1>
     </div>
   );
 }
@@ -312,7 +312,7 @@ function Moviedetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       document.title = `Movie | ${title}`;
 
       return function () {
-        document.title = "The Popcorn Club";
+        document.title = "Popcorn Club";
       };
     },
 
@@ -458,29 +458,3 @@ function WatchedMovie({ movie, onDeleteWatched }) {
     </li>
   );
 }
-
-// import React, { useEffect, useState } from 'react';
-
-// function UserProfile() {
-//   const [user, setUser] = useState(null);
-
-//   // 🔁 useEffect runs once after the component mounts
-//   useEffect(() => {
-//     fetch('https://jsonplaceholder.typicode.com/users/1') // Fake API
-//       .then(response => response.json())
-//       .then(data => setUser(data)); // ⬅️ Side effect: update state with fetched data
-//   }, []); // 👈 Empty array = run only once when mounted
-
-//   return (
-//     <div>
-//       <h2>User Profile</h2>
-//       {user ? (
-//         <p>Name: {user.name}</p>
-//       ) : (
-//         <p>Loading...</p>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default UserProfile;
