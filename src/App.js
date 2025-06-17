@@ -312,7 +312,7 @@ function Moviedetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       document.title = `Movie | ${title}`;
 
       return function () {
-        document.title = "Popcorn Cinema";
+        document.title = "The Popcorn Club";
       };
     },
 
