@@ -12,12 +12,12 @@ const starContainerStyle = {
   BackgroundColor: "yellow",
 };
 
-const textStyle = {
-  lineHeight: "1",
-  margin: "0",
-  BackgroundColor: "yellow",
-  color: "yellow",
-};
+// const textStyle = {
+//   lineHeight: "1",
+//   margin: "0",
+//   BackgroundColor: "yellow",
+//   color: "yellow",
+// };
 
 StarRating.propTypes = {
   maxRating: PropTypes.number,

@@ -295,8 +295,7 @@ body {
 .rating {
   background-color: var(--color-background-100);
   border-radius: 0.9rem;
-  justify-content: center;
-  align-items: center;
+
   padding: 2rem 2rem;
   margin-bottom: 0.8rem;
   font-weight: 600;
@@ -306,6 +305,11 @@ body {
   gap: 2.4rem;
 }
 
+.rating_p {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
 .btn-add {
   background-color: var(--color-primary);
   color: var(--color-text);
