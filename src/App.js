@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import StarRating from "./StarRating";
 import Popcorn from "./assest/popcorn.gif";
 
@@ -34,10 +34,13 @@ const KEY = "75748a98";
 export default function App() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState(tempMovieData);
-  const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [selectedId, SetSelectedId] = useState("");
+  const [watched, setWatched] = useState(function () {
+    const storedValue = localStorage.getItem("watched");
+    return JSON.parse(storedValue);
+  });
 
   function handleSelectedMovie(id) {
     SetSelectedId((selectedId) => (id === selectedId ? null : id));
@@ -54,6 +57,13 @@ export default function App() {
   function handleDeleteWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
+
+  useEffect(
+    function () {
+      localStorage.setItem("watched", JSON.stringify(watched));
+    },
+    [watched]
+  );
 
   useEffect(
     function () {
@@ -160,6 +170,12 @@ function Nabar({ children }) {
 }
 
 function Search({ query, setQuery }) {
+  const inputEl = useRef(null);
+
+  useEffect(function () {
+    inputEl.current.focus();
+  }, []);
+
   return (
     <input
       className="search"
@@ -167,6 +183,7 @@ function Search({ query, setQuery }) {
       placeholder="Search movies..."
       value={query}
       onChange={(e) => setQuery(e.target.value)}
+      ref={inputEl}
     />
   );
 }
@@ -390,7 +407,7 @@ function Watchedsummary({ watched }) {
         </p>
         <p>
           <span>⏳</span>
-          <span>{avgRuntime} min</span>
+          <span>{avgRuntime.toFixed(0)} min</span>
         </p>
       </div>
     </div>
